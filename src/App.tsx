@@ -1,8 +1,8 @@
 import React from 'react'
-import { Route, Routes, BrowserRouter } from "react-router-dom"
+import { Route, Routes, BrowserRouter, Link } from "react-router-dom"
 import { Layout, Typography, Space } from 'antd'
 
-import { HomePage, Navbar, Exchanges, Cryptocurrencies, News, CryptoDetails } from "../components"
+import { HomePage, Navbar, Exchanges, Cryptocurrencies, News, CryptoDetails } from "./components"
 
 function App() {
   return (
@@ -31,13 +31,19 @@ function App() {
             </Routes>
           </div>
         </Layout>
+
+        <footer className="footer" >
+          <Typography.Title level={5} style={{color: "white", textAlign: "center"}}>
+            Cryptoverse &reg; <br/>
+            All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+        </footer>
       </main>
-
-      <footer className="footer">
-
-        
-
-      </footer>
 
     </div>
   )
