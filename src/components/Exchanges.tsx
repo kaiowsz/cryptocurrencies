@@ -2,7 +2,7 @@ import React from 'react'
 
 function Exchanges() {
   return (
-    <div>Exchanges</div>
+    <div>Sorry. The page exchanges is not available for now.</div>
   )
 }
 
