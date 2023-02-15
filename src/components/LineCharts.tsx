@@ -63,7 +63,7 @@ function LineCharts({ coinHistory, currentPrice, coinName }: any) {
                 {coinHistory?.data?.change}%
             </Typography.Title>
             <Typography.Title level={5} className="current-price"> 
-                Current {coinName} Price: $ {currentPrice}
+                Current {coinName} Price: $ {Number(currentPrice).toFixed(2)}
             </Typography.Title>
         </Col>
 
