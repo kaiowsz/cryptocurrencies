@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Select, Typography, Row, Col, Avatar, Card } from "antd"
 import moment from "moment"
+import Loader from './Loader'
 
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi'
 
@@ -9,7 +10,7 @@ const { Option } = Select;
 
 const demoImage = "http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg"
 
-function News({simplified}: boolean) {
+function News({simplified}: any) {
 
   const [newsCategory, setNewsCategory] = useState("")
 
@@ -18,7 +19,7 @@ function News({simplified}: boolean) {
   console.log(cryptoNews)
 
   if(!cryptoNews) {
-    return "Loading..."
+    return <Loader />
   }
 
 

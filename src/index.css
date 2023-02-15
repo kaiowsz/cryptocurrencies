@@ -63,8 +63,9 @@ a:hover{
     position: absolute !important;
     right: 10px !important;
     top: 25px !important;
-    font-size: 1.2rem !important;
-    background-color: var(--bgSecondary) !important;
+    font-size: 1.5rem !important;
+    color: white;
+    background-color: transparent;
     border: none !important;
 }
 
