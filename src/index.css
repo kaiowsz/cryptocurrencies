@@ -299,10 +299,12 @@ a:hover{
     justify-content: space-between !important;
 }
 .news-title{
-width: 70%;
+    display: flex;
+    justify-content: space-between !important;
+    width: 100%;
 }
 
-.news-image-container .img{
+.news-image-container img{
     width:100px;
     height:100px;
 }
