@@ -1,33 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, FunctionComponent } from 'react'
 import HTMLReactParser from 'html-react-parser'
 import { useParams } from 'react-router-dom'
 import millify from 'millify'
 import { Col, Row, Typography, Select } from "antd"
 import Loader from './Loader'
-
+import LineCharts from './LineCharts'
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from "@ant-design/icons"
-
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from "../services/cryptoApi"
 
-import LineCharts from './LineCharts'
+
+interface CryptoDetailsProps {
+  coinId: string | string[] | undefined;
+}
 
 const { Title, Text } = Typography
 const { Option } = Select
 
-function CryptoDetails() {
-  const { coinId } = useParams();
+function CryptoDetails({coinId}: CryptoDetailsProps) {
   const [timePeriod, setTimePeriod] = useState("7d")
+
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId)
   const { data: coinHistory } = useGetCryptoHistoryQuery({coinId, timePeriod})
   const cryptoDetails = data?.data?.coin
-
-  console.log(cryptoDetails)
 
   if(isFetching) {
     return <Loader />
   }
 
-  
   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
   const stats = [
@@ -74,7 +73,7 @@ function CryptoDetails() {
         </Col>
 
         {stats.map(({icon, title, value}) => (
-          <Col className="coin-stats">
+          <Col key={title} className="coin-stats">
             <Col className="coin-stats-name">
               <Text>{icon}</Text>
               <Text>{title}</Text>
@@ -98,7 +97,7 @@ function CryptoDetails() {
         </Col>
 
         {genericStats.map(({icon, title, value}) => (
-          <Col className="coin-stats">
+          <Col key={title} className="coin-stats">
             <Col className="coin-stats-name">
               <Text>{icon}</Text>
               <Text>{title}</Text>

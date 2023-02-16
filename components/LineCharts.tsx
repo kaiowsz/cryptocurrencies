@@ -15,8 +15,6 @@ function LineCharts({ coinHistory, currentPrice, coinName }: any) {
     const coinPrice = []
     const coinTimestamp = []
 
-    console.log(coinHistory)
-
     for(let i = 0; i < coinHistory?.data?.history?.length; i++) {
         coinPrice.push(coinHistory?.data?.history[i].price)
         coinPrice.unshift(coinHistory?.data?.history[i].price);

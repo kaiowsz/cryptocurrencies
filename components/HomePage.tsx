@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from "./Navbar"
 import millify from 'millify'
 import { Typography, Row, Col, Statistic } from 'antd'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import Loader from './Loader'
 
 import { useGetCryptosQuery } from '../services/cryptoApi'
@@ -11,7 +11,6 @@ import { News, Cryptocurrencies } from './'
 
 function HomePage(): JSX.Element {
   const {data, isFetching} = useGetCryptosQuery(10);
-  console.log(data)
 
   const globalStats = data?.data?.stats
 
@@ -36,7 +35,7 @@ function HomePage(): JSX.Element {
     <div className="home-heading-container">
       <Typography.Title level={2} className="home-title">Top 10 Cryptocurrencies</Typography.Title>
       
-      <Typography.Title level={3}> <Link to="/cryptocurrencies">Show more</Link></Typography.Title>
+      <Typography.Title level={3}> <Link href="/cryptocurrencies">Show more</Link></Typography.Title>
     </div>
 
     <Cryptocurrencies simplified />
@@ -44,7 +43,7 @@ function HomePage(): JSX.Element {
     <div className="home-heading-container">
       <Typography.Title level={2} className="home-title">Latest Crypto News</Typography.Title>
       
-      <Typography.Title level={3}> <Link to="/news">Show more</Link></Typography.Title>
+      <Typography.Title level={3}> <Link href="/news">Show more</Link></Typography.Title>
     </div>
 
     <News simplified />
