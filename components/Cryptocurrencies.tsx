@@ -40,7 +40,8 @@ function Cryptocurrencies({ simplified }: any) {
             <Link href={`/crypto/${currency.uuid}`}>
               <Card
               title={`${currency.rank}. ${currency.name}`}
-              extra={<img className="crypto-image" src={currency.iconUrl} hoverable/>}
+              extra={<img className="crypto-image" src={currency.iconUrl} />}
+              hoverable 
               >
                 <p>Price: US$ {Number(currency.price).toFixed(2)}</p>
                 <p>Market Cap: {millify(currency.marketCap)}</p>
