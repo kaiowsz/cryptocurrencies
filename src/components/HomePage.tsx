@@ -9,7 +9,7 @@ import { useGetCryptosQuery } from '../services/cryptoApi'
 import { News, Cryptocurrencies } from './'
 
 
-function HomePage() {
+function HomePage(): JSX.Element {
   const {data, isFetching} = useGetCryptosQuery(10);
   console.log(data)
 
