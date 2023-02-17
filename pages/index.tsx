@@ -11,9 +11,6 @@ import { HomePage, Navbar, Exchanges, Cryptocurrencies, News, CryptoDetails } fr
 export default function Home() {
   return (
     <>
-      
-
-
         <HomePage />
     </>
   )

@@ -40,13 +40,13 @@ function LineCharts({ coinHistory, currentPrice, coinName }: any) {
 
     const options = {
         scales: {
-            yAxes: [
+            yAxes: 
                 {
                     ticks: {
                         beginAtZero: true
                     }
                 }
-            ]
+            
         }
     }
 

@@ -121,8 +121,8 @@ function CryptoDetails({coinId}: CryptoDetailsProps) {
           <Title level={3} className="coin-details-heading">
               {cryptoDetails.name} Links
           </Title>
-          {cryptoDetails.links.map((link: any) => (
-            <Row className="coin-link" key={link.name}>
+          {cryptoDetails.links.map((link: any, index: any) => (
+            <Row className="coin-link" key={index}>
               <Title level={5} className="link-name">
                 {link.type}
               </Title>
