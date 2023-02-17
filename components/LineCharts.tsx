@@ -69,7 +69,13 @@ function LineCharts({ coinHistory, currentPrice, coinName }: any) {
 
     </Row>
 
-    <Line data={data} options={options} />
+    <Line data={data} options={{
+        scales: {
+            yAxes: {
+                beginAtZero: true
+            }
+        }
+    }} />
 
 
     </>
