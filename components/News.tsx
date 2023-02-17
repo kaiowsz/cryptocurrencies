@@ -69,7 +69,7 @@ function News({simplified}: any) {
 
               <div className="provider-container">
                 <div>
-                  <Text>{moment(news.date).startOf("ss").fromNow()}</Text>
+                  <Text>{moment(news.date).startOf("s").fromNow()}</Text>
                 </div>
               </div>
             </a>
